@@ -1,0 +1,24 @@
+<table id="customers">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let item of items | async">
+    <td>
+      <h5>{{ item.id }}</h5>
+    </td>
+    <td>
+      <input type="text" #updatedName [value]="item.name" />
+      <button (click)="updateUser(item.key, updatedName.value)">Update</button>
+    </td>
+    <td>
+      <h5>{{ item.age }}</h5>
+    </td>
+    <td>
+      <button (click)="removeUser(item.key)">Delete</button>
+    </td>
+  </tr>
+</table>
+<button (click)="deleteAll()">Delete all</button>
