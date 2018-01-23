@@ -16,8 +16,9 @@ export class AuthService {
   signIn(email: string, password: string){
     this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
     .then(value => {
-      console.log("Nice, you are logged in");
+      console.log(this.user  );
       this.router.navigate(['/home']);
+
     })
     .catch(err => {
       console.log("Something went wrong: " + err.message);

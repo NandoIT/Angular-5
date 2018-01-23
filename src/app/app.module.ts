@@ -10,6 +10,7 @@ import { RoutingModule } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
 import { HeaderComponent } from './header/header.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -36,7 +37,7 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     AngularFireAuthModule,
     AngularFireDatabaseModule
   ],
-  providers: [ UserService, AuthService ],
+  providers: [ UserService, AuthService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

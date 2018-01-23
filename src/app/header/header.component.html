@@ -4,9 +4,8 @@
     <nav>
       <ul>
         <li *ngIf="authService.user | async" (click)="signOut()">Logout</li>
-        <li *ngIf="!authService.user"routerLink="/">Login</li>
-        <li routerLink="/home">Home</li>
-        <li routerLink="/form">Form</li>
+        <li *ngIf="authService.user | async" routerLink="/home">Home</li>
+        <li *ngIf="authService.user | async" routerLink="/form">Form</li>
 
         <li>{{headertitle}}</li>
       </ul>
