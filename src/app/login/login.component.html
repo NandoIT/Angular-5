@@ -1,7 +1,6 @@
-<form>
+
   <label>Name:</label>
-  <input type="text" name="" value="">
+  <input type="text" [(ngModel)]="email" placeholder="email">
   <label>Password:</label>
-  <input type="password" name="" value="">
-  <button routerLink="/home">Login</button>
-<form>
+  <input type="password" [(ngModel)]="password" placeholder="password">
+  <button (click)="login()" [disabled]="!email || !password">Login</button>

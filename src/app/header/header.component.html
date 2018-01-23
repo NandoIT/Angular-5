@@ -1,11 +1,13 @@
 <div class="header">
-  <p></p>
+  <p *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</p>
   <span class="user">
     <nav>
       <ul>
-        <li routerLink="/">Login</li>
+        <li *ngIf="authService.user | async" (click)="signOut()">Logout</li>
+        <li *ngIf="!authService.user"routerLink="/">Login</li>
         <li routerLink="/home">Home</li>
         <li routerLink="/form">Form</li>
+
         <li>{{headertitle}}</li>
       </ul>
     </nav>
